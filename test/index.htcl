@@ -1,0 +1,11 @@
+<% (log:trace (gethash :found *session*) *session* )%>
+<html>
+  <head><title>Test</title></head>
+  <body>
+    <p>
+      <%(if (not (gethash :found *session*))
+	    (progn (setf (gethash :found *session*) t)%> I dont know you... <%)
+	    %> I <b>do</b> know you... <%)%>
+    </p>
+  </body>
+<html>
